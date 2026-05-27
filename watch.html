@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Watch — YouTube Clone</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body class="watch-body">
+  <div id="loader"><div class="spinner"></div></div>
+
+  <header class="header">
+    <div class="header-left">
+      <button class="icon-btn" onclick="history.back()" aria-label="Back">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 90 20" class="logo-svg"><rect x="0" y="0" width="28" height="20" rx="5" fill="#FF0000"/><path d="M11.4 14.3 18.8 10 11.4 5.7z" fill="white"/><text x="32" y="15" font-family="Roboto" font-weight="700" font-size="14" fill="currentColor">YouTube</text></svg>
+      </a>
+    </div>
+    <div class="header-center">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search" />
+        <button class="search-btn" id="searchBtn"><span class="material-symbols-outlined">search</span></button>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="themeToggle"><span class="material-symbols-outlined">dark_mode</span></button>
+      <button class="avatar-btn"><img src="https://i.pravatar.cc/40?img=12" alt="me"/></button>
+    </div>
+  </header>
+
+  <main class="watch-layout">
+    <div class="watch-main">
+      <div class="player-wrap">
+        <video id="player" controls playsinline poster=""></video>
+      </div>
+      <h1 class="watch-title" id="watchTitle"></h1>
+
+      <div class="watch-actions">
+        <div class="channel-block">
+          <img class="ch-avatar" id="chAvatar" alt=""/>
+          <div>
+            <div class="ch-name"><span id="chName"></span><span class="verified material-symbols-outlined">verified</span></div>
+            <div class="ch-subs" id="chSubs"></div>
+          </div>
+          <button class="subscribe-btn" id="subBtn">Subscribe</button>
+        </div>
+        <div class="action-btns">
+          <div class="like-group">
+            <button id="likeBtn" class="pill"><span class="material-symbols-outlined">thumb_up</span><span id="likeCount">0</span></button>
+            <span class="sep"></span>
+            <button id="dislikeBtn" class="pill"><span class="material-symbols-outlined">thumb_down</span></button>
+          </div>
+          <button class="pill" onclick="shareVideo()"><span class="material-symbols-outlined">share</span>Share</button>
+          <button class="pill" id="saveBtn"><span class="material-symbols-outlined">playlist_add</span>Save</button>
+        </div>
+      </div>
+
+      <div class="description" id="description">
+        <div class="desc-meta" id="descMeta"></div>
+        <div class="desc-text" id="descText"></div>
+        <button class="show-more" id="showMore">Show more</button>
+      </div>
+
+      <section class="comments">
+        <h3 id="commentCount">0 Comments</h3>
+        <div class="comment-input">
+          <img src="https://i.pravatar.cc/40?img=12" alt=""/>
+          <input id="commentText" placeholder="Add a comment..."/>
+          <button id="commentBtn">Comment</button>
+        </div>
+        <div id="commentsList"></div>
+      </section>
+    </div>
+
+    <aside class="watch-side" id="watchSide">
+      <h3>Up next</h3>
+      <div id="upNext"></div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="watch.js"></script>
+</body>
+</html>

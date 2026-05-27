@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YouTube Clone</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+  <div id="loader"><div class="spinner"></div></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <button class="icon-btn" id="menuToggle" aria-label="Menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 90 20" class="logo-svg" aria-hidden="true">
+          <g>
+            <path d="M27.9727 3.12324C27.6435 1.89323 26.6768 0.926623 25.4468 0.597366C23.2197 2.24288e-07 14.285 0 14.285 0C14.285 0 5.35042 2.24288e-07 3.12323 0.597366C1.89323 0.926623 0.926623 1.89323 0.597366 3.12324C2.24288e-07 5.35042 0 10 0 10C0 10 2.24288e-07 14.6496 0.597366 16.8768C0.926623 18.1068 1.89323 19.0734 3.12323 19.4026C5.35042 20 14.285 20 14.285 20C14.285 20 23.2197 20 25.4468 19.4026C26.6768 19.0734 27.6435 18.1068 27.9727 16.8768C28.5701 14.6496 28.5701 10 28.5701 10C28.5701 10 28.5677 5.35042 27.9727 3.12324Z" fill="#FF0000"></path>
+            <path d="M11.4253 14.2854L18.8477 10.0004L11.4253 5.71533V14.2854Z" fill="white"></path>
+          </g>
+          <g><path d="M34.6024 13.0036L31.3945 1.41846H34.1932L35.3174 6.6701C35.6043 7.96361 35.8136 9.06662 35.95 9.97913H36.0323C36.1264 9.32532 36.3381 8.22937 36.665 6.68892L37.8291 1.41846H40.6278L37.3799 13.0036V18.561H34.6001V13.0036H34.6024Z" fill="currentColor"></path><path d="M41.4697 18.1937C40.9053 17.8127 40.5031 17.22 40.2632 16.4157C40.0257 15.6114 39.9058 14.5437 39.9058 13.2078V11.3898C39.9058 10.0422 40.0422 8.95805 40.315 8.14196C40.5878 7.32588 41.0135 6.72851 41.592 6.35457C42.1706 5.98063 42.9302 5.79248 43.871 5.79248C44.7976 5.79248 45.5384 5.98298 46.0981 6.36398C46.6555 6.74497 47.0647 7.34234 47.3234 8.15137C47.5821 8.96275 47.7115 10.0422 47.7115 11.3898V13.2078C47.7115 14.5437 47.5845 15.6161 47.3329 16.4251C47.0812 17.2365 46.672 17.8292 46.1075 18.2031C45.5431 18.5771 44.7764 18.7652 43.8098 18.7652C42.8126 18.7675 42.0342 18.5747 41.4697 18.1937ZM44.6353 16.2323C44.7905 15.8231 44.8705 15.1575 44.8705 14.2309V10.3292C44.8705 9.42911 44.7929 8.77065 44.6353 8.35672C44.4777 7.94046 44.2026 7.7335 43.8074 7.7335C43.4265 7.7335 43.156 7.94046 43.0008 8.35672C42.8432 8.77299 42.7656 9.42911 42.7656 10.3292V14.2309C42.7656 15.1575 42.8408 15.8254 42.9914 16.2323C43.1419 16.6415 43.4124 16.8461 43.8074 16.8461C44.2026 16.8461 44.4777 16.6415 44.6353 16.2323Z" fill="currentColor"></path><path d="M58.0747 18.5634H55.8688L55.6242 17.03H55.563C54.9633 18.1871 54.0649 18.7656 52.8679 18.7656C52.0377 18.7656 51.4239 18.4928 51.0289 17.9496C50.6338 17.4039 50.4374 16.5526 50.4374 15.3933V6.03751H53.2572V15.2308C53.2572 15.7906 53.3185 16.188 53.4408 16.4256C53.5631 16.6631 53.7679 16.783 54.0529 16.783C54.2974 16.783 54.5302 16.7078 54.7536 16.5573C54.9774 16.4067 55.1421 16.2162 55.2526 15.9858V6.03515H58.0747V18.5634Z" fill="currentColor"></path><path d="M65.5552 3.6907H62.7588V18.5629H59.9991V3.6907H57.2026V1.42036H65.5552V3.6907Z" fill="currentColor"></path><path d="M72.3679 18.5634H70.162L69.9174 17.03H69.8562C69.2565 18.1871 68.3581 18.7656 67.1611 18.7656C66.3309 18.7656 65.7171 18.4928 65.3221 17.9496C64.927 17.4039 64.7306 16.5526 64.7306 15.3933V6.03751H67.5504V15.2308C67.5504 15.7906 67.6117 16.188 67.734 16.4256C67.8563 16.6631 68.0611 16.783 68.3461 16.783C68.5906 16.783 68.8234 16.7078 69.0468 16.5573C69.2706 16.4067 69.4353 16.2162 69.5458 15.9858V6.03515H72.3679V18.5634Z" fill="currentColor"></path><path d="M81.6845 8.32855C81.5128 7.53827 81.2353 6.96562 80.8519 6.6082C80.4686 6.25077 79.9418 6.07383 79.2691 6.07383C78.7493 6.07383 78.2625 6.22018 77.8086 6.51759C77.3548 6.81499 77.0038 7.20304 76.7585 7.68505H76.7373V0.785645H74.0162V18.5608H76.349L76.6359 17.3756H76.6971C76.9165 17.798 77.2436 18.1295 77.6788 18.3735C78.1138 18.6144 78.5982 18.7373 79.1296 18.7373C80.0821 18.7373 80.7831 18.2976 81.2294 17.4204C81.6757 16.5408 81.9 15.1697 81.9 13.3034V11.3559C81.9 9.9565 81.8129 8.85882 81.6388 8.06854L81.6845 8.32855ZM79.0973 13.1551C79.0973 14.0669 79.0596 14.7812 78.9843 15.2999C78.9091 15.8186 78.7822 16.1854 78.6035 16.4031C78.4271 16.6184 78.1891 16.7272 77.8898 16.7272C77.6582 16.7272 77.4441 16.6731 77.2495 16.5625C77.0526 16.4543 76.8939 16.2914 76.7706 16.0784V8.96062C76.8662 8.6185 77.0308 8.33935 77.2671 8.12059C77.5009 7.90183 77.7563 7.79363 78.0298 7.79363C78.3173 7.79363 78.5388 7.90417 78.6929 8.12762C78.8493 8.35343 78.9574 8.73207 79.0185 9.26714C79.0796 9.80221 79.1102 10.563 79.1102 11.5519V13.1551H79.0973Z" fill="currentColor"></path><path d="M84.8657 13.8712C84.8657 14.6755 84.8892 15.2776 84.9363 15.6798C84.9833 16.0819 85.0821 16.3736 85.2326 16.5594C85.3831 16.7428 85.6136 16.8345 85.9264 16.8345C86.3475 16.8345 86.639 16.6699 86.7942 16.343C86.9518 16.0161 87.0365 15.4705 87.0506 14.7085L89.4798 14.8519C89.4939 14.96 89.5009 15.1106 89.5009 15.3011C89.5009 16.4582 89.1834 17.3237 88.5507 17.8946C87.918 18.4656 87.0224 18.7522 85.8654 18.7522C84.4777 18.7522 83.5046 18.3171 82.9472 17.4453C82.3874 16.5735 82.1088 15.2259 82.1088 13.4008V11.2156C82.1088 9.33614 82.3992 7.96389 82.9778 7.10141C83.5564 6.23892 84.5459 5.80768 85.9499 5.80768C86.9165 5.80768 87.6597 5.98463 88.1784 6.34088C88.6971 6.69713 89.0617 7.25096 89.2722 8.00473C89.4827 8.75851 89.5891 9.79656 89.5891 11.1206V13.2752H84.8657V13.8712ZM85.2232 7.96624C85.0797 8.14318 84.9857 8.43354 84.9363 8.83333C84.8892 9.23076 84.8657 9.83518 84.8657 10.6489V11.5396H86.9283V10.6489C86.9283 9.84929 86.9001 9.24489 86.846 8.83333C86.7919 8.41943 86.6931 8.12671 86.5496 7.95212C86.4062 7.77989 86.1851 7.69261 85.8888 7.69261C85.5901 7.69496 85.3666 7.78695 85.2232 7.96624Z" fill="currentColor"></path></g>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search" aria-label="Search" />
+        <button class="search-btn" id="searchBtn" aria-label="Search">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+      </div>
+      <button class="icon-btn voice-btn" id="voiceBtn" aria-label="Voice search">
+        <span class="material-symbols-outlined">mic</span>
+      </button>
+    </div>
+
+    <div class="header-right">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+        <span class="material-symbols-outlined">dark_mode</span>
+      </button>
+      <button class="icon-btn" aria-label="Create" onclick="toast('Upload coming soon')">
+        <span class="material-symbols-outlined">video_call</span>
+      </button>
+      <button class="icon-btn" aria-label="Notifications" onclick="toast('No new notifications')">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <div class="profile-wrap">
+        <button class="avatar-btn" id="avatarBtn" aria-label="Account">
+          <img src="https://i.pravatar.cc/40?img=12" alt="me" />
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <div class="pm-header">
+            <img src="https://i.pravatar.cc/60?img=12" alt="" />
+            <div>
+              <strong>Alex Carter</strong>
+              <div class="muted">@alexcarter</div>
+            </div>
+          </div>
+          <hr/>
+          <a href="#"><span class="material-symbols-outlined">person</span>Your channel</a>
+          <a href="#history" data-nav="history"><span class="material-symbols-outlined">history</span>History</a>
+          <a href="#liked" data-nav="liked"><span class="material-symbols-outlined">thumb_up</span>Liked videos</a>
+          <a href="#"><span class="material-symbols-outlined">settings</span>Settings</a>
+          <a href="#" onclick="toast('Signed out')"><span class="material-symbols-outlined">logout</span>Sign out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <a class="side-link active" data-nav="home" href="#home"><span class="material-symbols-outlined">home</span><span class="label">Home</span></a>
+      <a class="side-link" data-nav="shorts" href="#shorts"><span class="material-symbols-outlined">movie</span><span class="label">Shorts</span></a>
+      <a class="side-link" data-nav="subs" href="#subs"><span class="material-symbols-outlined">subscriptions</span><span class="label">Subscriptions</span></a>
+      <hr/>
+      <a class="side-link" data-nav="history" href="#history"><span class="material-symbols-outlined">history</span><span class="label">History</span></a>
+      <a class="side-link" data-nav="liked" href="#liked"><span class="material-symbols-outlined">thumb_up</span><span class="label">Liked Videos</span></a>
+      <a class="side-link" data-nav="trending" href="#trending"><span class="material-symbols-outlined">trending_up</span><span class="label">Trending</span></a>
+      <a class="side-link" data-nav="music" href="#music"><span class="material-symbols-outlined">music_note</span><span class="label">Music</span></a>
+      <a class="side-link" data-nav="gaming" href="#gaming"><span class="material-symbols-outlined">sports_esports</span><span class="label">Gaming</span></a>
+      <hr/>
+      <a class="side-link" data-nav="settings" href="#settings"><span class="material-symbols-outlined">settings</span><span class="label">Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <!-- Category chips -->
+    <div class="chips" id="chips">
+      <button class="chip active">All</button>
+      <button class="chip">Music</button>
+      <button class="chip">Gaming</button>
+      <button class="chip">Live</button>
+      <button class="chip">News</button>
+      <button class="chip">Coding</button>
+      <button class="chip">Sports</button>
+      <button class="chip">Comedy</button>
+      <button class="chip">Cooking</button>
+      <button class="chip">Travel</button>
+      <button class="chip">Recently uploaded</button>
+    </div>
+
+    <!-- View: Home / generic grid -->
+    <section id="view-grid" class="view active">
+      <h2 class="view-title" id="viewTitle">Recommended</h2>
+      <div class="video-grid" id="videoGrid"></div>
+      <div class="no-results" id="noResults" hidden>No Results Found</div>
+    </section>
+
+    <!-- View: Shorts -->
+    <section id="view-shorts" class="view">
+      <div class="shorts-feed" id="shortsFeed"></div>
+    </section>
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav">
+    <a href="#home" data-nav="home"><span class="material-symbols-outlined">home</span>Home</a>
+    <a href="#shorts" data-nav="shorts"><span class="material-symbols-outlined">movie</span>Shorts</a>
+    <a href="#subs" data-nav="subs"><span class="material-symbols-outlined">subscriptions</span>Subs</a>
+    <a href="#liked" data-nav="liked"><span class="material-symbols-outlined">thumb_up</span>Liked</a>
+  </nav>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
